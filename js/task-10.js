@@ -7,12 +7,11 @@ function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
 
-let widthElement = 30;
-let hightElement = 30;
-
+let widthElement = 20;
+let hightElement = 20;
 
 function createBoxes(amount) {
-  destroyAll();
+  // destroyAll();
   amount = intut.value;
   for (let i = 0; i < amount; i++) {
     

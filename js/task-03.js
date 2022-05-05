@@ -13,32 +13,34 @@ const images = [
   },
 ];
 
-
 //first approuch
-const list = document.querySelector(".gallery");
-const markup = images.map((image) =>
-  `<li style="padding: 30px; margin: 50px; background-color: #ffeb3b; width: 300px; display: flex;" 
-  class="list-item new">
-  <img src=${image.url} alt=${image.alt} width=240></img>
-  </li>`)
-  .join("");
-
-list.insertAdjacentHTML("beforeend", markup);
-
-//second approuch
-// for (let i = 0; i < images.length; i++) {
-//   const li = document.createElement('li');
-//   li.style = "padding: 30px; margin: 50px; background-color: #ffeb3b; min-width: 300px;";
-//   const image = document.createElement('img');
-//   image.src = images[i].url;
-//   image.alt = images[i].alt;
-//   image.width = 240;
-//   li.appendChild(image);
-//   console.log('image item :>> ', li);
-//   const galler = document.querySelector(".gallery");
-//   galler.appendChild(li);
-// }
+const gallery = document.querySelector(".gallery");
+gallery.style.listStyle = 'none';
+for (let i = 0; i < images.length; i++) {
+  const li = document.createElement('li');
+  li.style.padding = 30 + 'px';
+  li.style.margin = 50 + 'px';
+  const image = document.createElement('img');
+  image.src = images[i].url;
+  image.alt = images[i].alt;
+  image.width = 240;
+  image.height = 150;
+  li.appendChild(image);
+  console.log('image item :>> ', li);
+  gallery.appendChild(li);
+}
 
 // const image = document.createElement('img');
 // image.src = "https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260";
 // console.log('img :>> ', image);
+
+//second approuch
+// const list = document.querySelector(".gallery");
+// const markup = images.map((image) =>
+//   `<li style="padding: 30px; margin: 50px; background-color: #ffeb3b; width: 300px; display: flex;" 
+//   class="list-item new">
+//   <img src=${image.url} alt=${image.alt} width=240></img>
+//   </li>`)
+//   .join("");
+
+// list.insertAdjacentHTML("beforeend", markup);
